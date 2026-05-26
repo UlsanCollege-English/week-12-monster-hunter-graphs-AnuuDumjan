@@ -1,79 +1,83 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/80z-ZS6n)
 # Week 12: Monster Hunter Graphs
 
 ## Student
 
-Name:
+Name: Anu Dumjan
 
-Student ID:
+Student ID:2412096
 
 ## Summary
 
-Write 3–6 lines explaining what this assignment does.
-
-Example questions to answer:
-
-- What kind of graph did you build?
-- What do the locations represent?
-- What do the routes represent?
-- What was the hardest function?
+This assignment builds graph helper functions using Python.
+The graph represents monster locations and routes between them.
+I created both unweighted and weighted graphs using dictionaries.
+The routes connect locations in both directions.
+The hardest function was the weighted graph because it needed to keep the lowest danger score.
 
 ## Approach
 
-Explain your approach in bullets.
-
 - `build_hunter_map`:
+  Used a dictionary with lists to create an undirected adjacency list.
+
 - `build_weighted_hunter_map`:
+  Used nested dictionaries to store weighted routes and checked for invalid danger scores.
+
 - `map_summary`:
+  Counted the number of locations and divided total connections by two to avoid duplicate route counting.
+
 - `most_connected_location`:
+  Compared neighbor counts and returned the alphabetically first location during ties.
+
 - `priority_hunt_order`:
+  Used heapq to sort reports from most urgent to least urgent.
 
 ## Complexity
 
-Complete this section.
-
 ### `build_hunter_map`
 
-- Time:
-- Space:
+- Time: O(E)
+- Space: O(V + E)
 - Why:
+  Each edge is processed once and stored in the graph.
 
 ### `build_weighted_hunter_map`
 
-- Time:
-- Space:
+- Time: O(E)
+- Space: O(V + E)
 - Why:
+  Each weighted route is added once in both directions.
 
 ### `map_summary`
 
-- Time:
-- Space:
+- Time: O(V + E)
+- Space: O(1)
 - Why:
+  The function loops through all graph connections.
 
 ### `most_connected_location`
 
-- Time:
-- Space:
+- Time: O(V)
+- Space: O(1)
 - Why:
+  It checks each location once.
 
 ### `priority_hunt_order`
 
-- Time:
-- Space:
+- Time: O(n log n)
+- Space: O(n)
 - Why:
+  Heap operations take log n time for each insertion and removal.
 
 ## Edge-Case Checklist
 
-Check the cases you handled.
-
-- [ ] Empty graph
-- [ ] One route
-- [ ] Duplicate routes
-- [ ] Disconnected locations
-- [ ] Tie for most connected location
-- [ ] Positive weighted routes
-- [ ] Invalid zero or negative danger score
-- [ ] Empty priority report list
+- [x] Empty graph
+- [x] One route
+- [x] Duplicate routes
+- [x] Disconnected locations
+- [x] Tie for most connected location
+- [x] Positive weighted routes
+- [x] Invalid zero or negative danger score
+- [x] Empty priority report list
 
 ## Tests
 
@@ -81,22 +85,3 @@ Paste the result of your test run.
 
 ```bash
 pytest -q
-```
-
-Result:
-
-```text
-
-```
-
-## Assistance & Sources
-
-AI used? Yes / No
-
-If yes, what did it help with?
-
--
-
-Other sources used:
-
--
